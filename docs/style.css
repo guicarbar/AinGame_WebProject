@@ -79,9 +79,15 @@ main{
     padding: 5px 1em;
 }
 
+.tools>div:last-child {
+    display: flex;
+    align-items: center;
+}
+
 .tools>div:last-child>p:last-child {
-    width: 300px;
+    width: 100px;
     margin: 0px 0px 0px 15px;
+    font-size: 24px;
 }
 
 .tools>div:first-child>h2 {
@@ -94,21 +100,21 @@ main{
 }
 
 .timer {
-    width: 600px;
+    min-width: 600px;
     background-color: var(--color2);
     height: 16px;
     border-radius: 30px;
     position: relative;
 }
 
-.timer::before {
+.timer-before::before {
     content: "";
     position: absolute;
     height: 16px;
     border-radius: 30px;
     width: 0;
     background-color: var(--color5);
-    animation: timerAnt 60s infinite ease-out;
+    animation: timerAnt 60s ease-out forwards;
 }
 
 @keyframes timerAnt {
@@ -231,6 +237,7 @@ main>div:last-child {
     box-shadow: 0px 0px 10px red;
     cursor: pointer;
     transition: background-color .3s ease;
+    display: none;
 }
 
 .ballerro:hover {
@@ -246,6 +253,7 @@ main>div:last-child {
     box-shadow: 0px 0px 10px var(--color5);
     cursor: pointer;
     transition: background-color .3s ease;
+    display: none;
 }
 
 .balldp:hover {

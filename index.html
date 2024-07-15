@@ -17,11 +17,11 @@
         <div class="tools">
             <div>
                 <h2>Timer:</h2>
-                <div class="timer"></div>
+                <div class="timer" id="timerBar"></div>
             </div>
             <div>
                 <h2>Pontuação:</h2>
-                <p></p>
+                <p id="pontos">0</p>
             </div>
         </div>
 
@@ -47,7 +47,7 @@
 
             <div class="game" id="game">
                 <div class="start">
-                    <button onclick="start(), timerRedBall()">Start</button>
+                    <button onclick="start(), startBar(), timeEnd()">Start</button>
                 </div>
             </div>
         </div>
