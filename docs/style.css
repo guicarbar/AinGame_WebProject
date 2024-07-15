@@ -1,0 +1,195 @@
+/* geral e o raiz */
+
+
+
+:root {
+    --color1: #0d192b;
+    --color2: #0c5149;
+    --color3: #0a8967;
+    --color4: #09c184;
+    --color5: #07f9a2;
+}
+
+* {
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--color1);
+}
+
+
+
+/* header */
+
+
+
+header>h1 {
+    background-color: var(--color4);
+    text-align: center;
+    padding: 1em;
+    font-weight: bold;
+}
+
+footer {
+    background-color: var(--color4);
+    text-align: center;
+    font-weight: bold;
+    padding: 2em;
+}
+
+
+
+/* main */
+
+
+
+main{
+    width: 1300px;
+    height: 700px;
+    margin: 2em auto;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px var(--color3);
+}
+
+
+
+/* tools */
+
+
+
+.tools {
+    height: 10%;
+    background-color: var(--color3);
+    border-radius: 30px 30px 0px 0px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 2em;
+}
+
+.tools>div {
+    background-color: var(--color1);
+    border-radius: 30px;
+    padding: 5px 1em;
+}
+
+.tools>div:last-child>p:last-child {
+    width: 300px;
+    margin: 0px 0px 0px 15px;
+}
+
+.tools>div:first-child>h2 {
+    margin: 0px 15px 0px 0px;
+}
+
+.tools>div:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.timer {
+    width: 600px;
+    background-color: var(--color2);
+    height: 16px;
+    border-radius: 30px;
+    position: relative;
+}
+
+.timer::before {
+    content: "";
+    position: absolute;
+    height: 16px;
+    border-radius: 30px;
+    width: 0;
+    background-color: var(--color5);
+    animation: timerAnt 4s infinite ease-out;
+}
+
+@keyframes timerAnt {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+
+
+/*hud area */
+
+
+
+main>div:last-child {
+    height: 90%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 100%;
+}
+
+
+
+/* vidas e tutorial */
+
+
+
+.player {
+    background-color: var(--color4);
+    box-shadow: 0px 0px 10px var(--color4);
+    margin: 1em;
+    border-radius: 30px;
+}
+
+.player>div:first-child {
+    background-color: var(--color1);
+    border-radius: 30px 30px 0px 0px;
+}
+
+.player>div:first-child>h2 {
+    text-align: center;
+    padding: 10px;
+}
+
+.lifebar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lifebar>div {
+    width: 32px;
+    height: 32px;
+    margin: 0px 8px 10px;
+    border-radius: 30px;    
+    background-color: red;
+    box-shadow: 0px 0px 10px red;
+}
+
+.player>div:last-child {
+    padding: 1em;
+}
+
+.player>div:last-child>h2 {
+    text-align: center;
+}
+
+.player>div:last-child>hr {
+    margin: 8px 0px;
+}
+
+.player>div:last-child>p {
+    text-indent: 1em;
+}
+
+
+
+/* hude in game */
+
+
+
