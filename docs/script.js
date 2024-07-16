@@ -9,7 +9,6 @@ const starText = `
     <div class="balldp" id="balldp"></div>
 `
 
-const timerBar = document.getElementById('timerBar')
 const gameArea = document.getElementById('game')
 const largura = gameArea.offsetWidth
 const altura = gameArea.offsetHeight
@@ -36,6 +35,7 @@ function addDoublepoint() {
 }
 
 function startBar() {
+    const timerBar = document.getElementById('timerBar')
     timerBar.classList.add('timer-before')
 }
 
@@ -61,7 +61,7 @@ function errou() {
 }
 
 function dbBall() {
-    const gameBallDp = document.getElementById('balldp');
+    const gameBallDp = document.getElementById('balldp')
     position(gameBallDp)
     gameBallDp.style.display = 'none'
 
@@ -69,8 +69,8 @@ function dbBall() {
         gameBallDp.style.display = 'block'
         gameBallDp.addEventListener('click', () => {
             addDoublepoint()
-            dpBallReloading(gameBallDp);
-        });
+            dpBallReloading(gameBallDp)
+        })
     }, 5000)
 }
 
@@ -110,33 +110,35 @@ function start() {
     position(gameBall3)
     position(gameBallErro)
 
-    function resetTimer(ball) {
-        clearTimeout(ball.timer)
-        ball.timer = setTimeout(() => {
-            position(ball)
-            resetTimer(ball)
-        }, 4500)
-    }
-
     gameBall1.addEventListener('click', () => {
         position(gameBall1)
         addpoint()
         resetTimer(gameBall1)
-    });
+    })
     gameBall2.addEventListener('click', () => {
         position(gameBall2)
         addpoint()
         resetTimer(gameBall2)
-    });
+    })
     gameBall3.addEventListener('click', () => {
         position(gameBall3)
         addpoint()
         resetTimer(gameBall3)
-    });
+    })
     gameBallErro.addEventListener('click', () => {
         position(gameBallErro)
         errou()
         verificarLife()
         resetTimer(gameBallErro)
-    });
+    })
 }
+
+
+function startGame() {
+    start()
+    startBar()
+    timeEnd()
+    dbBall()
+
+}
+
