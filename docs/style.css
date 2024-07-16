@@ -169,12 +169,22 @@ main>div:last-child {
 }
 
 .lifebar>div {
-    width: 32px;
+    width: 200px;
     height: 32px;
     margin: 0px 8px 10px;
     border-radius: 30px;    
+    background-color: rgba(255, 0, 0, 0.300);
+    box-shadow: 0px 0px 15px red;
+    position: relative;
+}
+
+#life {
+    position: absolute;
+    width: 200px;
     background-color: red;
     box-shadow: 0px 0px 10px red;
+    height: 32px;
+    border-radius: 30px;    
 }
 
 .player>div:last-child {
@@ -200,10 +210,10 @@ main>div:last-child {
 
 
 .game {
-    margin: 1em;
     box-shadow: 0px 0px 10px var(--color4);
     border-radius: 30px;
     position: relative;
+    margin: 1em;
 }
 
 
@@ -218,31 +228,14 @@ main>div:last-child {
     width: 100px;
     border-radius: 50%;
     background-color: var(--color4);
-    box-shadow: 0px 0px 10px var(--color4);
+    box-shadow: 0px 0px 15px var(--color4);
     cursor: pointer;
     transition: background-color .3s ease;
 }
 
 .ballpoint:hover {
     background-color: var(--color2);
-    box-shadow: 0px 0px 10px var(--color2);
-}
-
-.ballerro {
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    background-color: red;
-    box-shadow: 0px 0px 10px red;
-    cursor: pointer;
-    transition: background-color .3s ease;
-    display: none;
-}
-
-.ballerro:hover {
-    background-color: rgb(111, 17, 155);
-    box-shadow: 0px 0px 10px rgb(111, 17, 155);
+    box-shadow: 0px 0px 15px var(--color2);
 }
 
 .balldp {
@@ -250,7 +243,7 @@ main>div:last-child {
     height: 100px;
     width: 100px;
     border-radius: 50%;
-    box-shadow: 0px 0px 10px var(--color5);
+    box-shadow: 0px 0px 15px var(--color2);
     cursor: pointer;
     transition: background-color .3s ease;
     display: none;
@@ -258,6 +251,23 @@ main>div:last-child {
 
 .balldp:hover {
     background-color: var(--color5);
+    box-shadow: 0px 0px 15px var(--color5);
+}
+
+.ballerro {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: var(--color2);
+    box-shadow: 0px 0px 15px var(--color2);
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.ballerro:hover {
+    background-color: var(--color3);
+    box-shadow: 0px 0px 15px var(--color3);
 }
 
 
