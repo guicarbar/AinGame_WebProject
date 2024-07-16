@@ -60,6 +60,11 @@ function errou() {
     lifeBar.style.width = lifeVar + 'px'
 }
 
+function timeToClickDp(gameBallDp) {
+    setTimeout(() => {gameBallDp.style.display = 'none', position(gameBallDp), dpBallReloading(gameBallDp)}, 4500)
+
+}
+
 function dbBall() {
     const gameBallDp = document.getElementById('balldp')
     position(gameBallDp)
@@ -67,22 +72,12 @@ function dbBall() {
 
     setTimeout(() => {
         gameBallDp.style.display = 'block'
+        timeToClickDp(gameBallDp)
         gameBallDp.addEventListener('click', () => {
             addDoublepoint()
             dpBallReloading(gameBallDp)
         })
-    }, 5000)
-}
-
-function timeToClick(ball) {
-    function resetTimer() {
-        clearTimeout(ball.timer)
-        ball.timer = setTimeout(() => {
-            position(ball)
-            resetTimer()
-        }, 4500)
-    }
-    resetTimer()
+    }, 6000)
 }
 
 function dpBallReloading(gameBallDp) {
@@ -93,8 +88,9 @@ function dpBallReloading(gameBallDp) {
         console.log('bolinha bala')
     }
     setTimeout(() => {
-        gameBallDp.style.display = 'block'
-    }, 7000)
+        gameBallDp.style.display = 'block',
+        timeToClickDp(gameBallDp)
+    }, 8000)
 }
 
 function start() {
@@ -109,6 +105,19 @@ function start() {
     position(gameBall2)
     position(gameBall3)
     position(gameBallErro)
+
+    function resetTimer(ball) {
+        clearTimeout(ball.timer);
+        ball.timer = setTimeout(() => {
+            position(ball);
+            resetTimer(ball);
+        }, 4500);
+    }
+
+    resetTimer(gameBall1)
+    resetTimer(gameBall2)
+    resetTimer(gameBall3)
+    resetTimer(gameBallErro)
 
     gameBall1.addEventListener('click', () => {
         position(gameBall1)
@@ -131,14 +140,5 @@ function start() {
         verificarLife()
         resetTimer(gameBallErro)
     })
-}
-
-
-function startGame() {
-    start()
-    startBar()
-    timeEnd()
-    dbBall()
-
 }
 
