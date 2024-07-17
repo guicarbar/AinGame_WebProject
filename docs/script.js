@@ -1,5 +1,13 @@
 var life = 5
 var lifeBar = document.getElementById('life')
+var lifeVar = lifeBar.offsetWidth
+
+let gameTimer
+
+const timerBar = document.getElementById('timerBar')
+
+const pontos = document.getElementById('pontos')
+const valuePontos = parseInt(pontos.innerHTML)
 
 const starText = `
     <div class="ballpoint" id="ball1"></div>
@@ -23,31 +31,45 @@ function position(ballClick) {
 }
 
 function addpoint() {
-    const pontos = document.getElementById('pontos')
-    const valuePontos = parseInt(pontos.innerHTML)
     pontos.innerHTML = valuePontos + 100
 }
 
 function addDoublepoint() {
-    const pontos = document.getElementById('pontos');
-    const valuePontos = parseInt(pontos.innerHTML);
     pontos.innerHTML = valuePontos + 500
 }
 
-function startBar() {
-    const timerBar = document.getElementById('timerBar')
+function zerarPontuaçao() {
+    pontos.innerHTML = "0"
+}
+
+function startBarTimer() {
     timerBar.classList.add('timer-before')
 }
 
-function timeEnd() {
-    setTimeout(() => {
-        gameArea.innerHTML = ''
+function stopBarTimer() {
+    timerBar.classList.remove('timer-before')
+}
+
+function timeGame() {
+    gameTimer = setTimeout(() => {
+        gameArea.innerHTML = '',
+        stopBarTimer()
     }, 60000)
+}
+
+function stopGameTimer() {
+    clearTimeout(gameTimer);
+}
+
+function encherVida() {
+    lifeBar.style.width = 200 + 'px'
 }
 
 function verificarLife() {
     if (life === 0) {
-        gameArea.innerHTML = ''
+        gameArea.innerHTML = '',
+        stopGameTimer(),
+        stopBarTimer()
     } else {
         console.log('continuar game')
     }
@@ -55,7 +77,6 @@ function verificarLife() {
 
 function errou() {
     life -= 1
-    let lifeVar = lifeBar.offsetWidth
     lifeVar -= 40
     lifeBar.style.width = lifeVar + 'px'
 }
