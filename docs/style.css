@@ -334,23 +334,3 @@ main>div:last-child {
 .restart>button:hover {
     background-color: var(--color4);
 }
-
-.pontusfinais {
-    border-radius: 30px;
-    border: 0px;
-    box-shadow: 0px 0px 15px var(--color5);
-    background-color: var(--color5);
-    padding: 1em;
-    display: flex;
-    align-items: center;
-}
-
-.pontusfinais>h3, .pontusfinais>p {
-    margin: 0px 1em;
-    color: black;
-    font-weight: bold;
-}
-
-.pontusfinais>p {
-    font-size: larger;
-}

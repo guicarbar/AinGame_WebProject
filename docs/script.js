@@ -19,10 +19,6 @@ const starText = `
 
 const restart = `
     <div class="restart">
-        <div class="pontusfinais">
-            <h3>Sua pontuação na ultima rodado foi:</h3>
-            <p id="finalPontos"></p>
-        </div>
         <button onclick="start(), startBarTimer(), timeGame(), dbBall(), zerarPontuaçao(), encherVida()">Restart</button>
     </div>
 `
