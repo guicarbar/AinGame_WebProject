@@ -7,7 +7,7 @@ let gameTimer
 const timerBar = document.getElementById('timerBar')
 
 const pontos = document.getElementById('pontos')
-const valuePontos = parseInt(pontos.innerHTML)
+const pontosFinal = document.getElementById('finalPontos')
 
 const starText = `
     <div class="ballpoint" id="ball1"></div>
@@ -15,6 +15,16 @@ const starText = `
     <div class="ballpoint" id="ball3"></div>
     <div class="ballerro" id="ballerro"></div>
     <div class="balldp" id="balldp"></div>
+`
+
+const restart = `
+    <div class="restart">
+        <div class="pontusfinais">
+            <h3>Sua pontuação na ultima rodado foi:</h3>
+            <p id="finalPontos"></p>
+        </div>
+        <button onclick="start(), startBarTimer(), timeGame(), dbBall(), zerarPontuaçao(), encherVida()">Restart</button>
+    </div>
 `
 
 const gameArea = document.getElementById('game')
@@ -30,17 +40,20 @@ function position(ballClick) {
     ballClick.style.left = randoMedidas(largura) + 'px'
 }
 
+function zerarPontuaçao() {
+    pontos.innerHTML = "0"
+}
+
 function addpoint() {
+    let valuePontos = parseInt(pontos.innerHTML)
     pontos.innerHTML = valuePontos + 100
 }
 
 function addDoublepoint() {
+    let valuePontos = parseInt(pontos.innerHTML)
     pontos.innerHTML = valuePontos + 500
 }
 
-function zerarPontuaçao() {
-    pontos.innerHTML = "0"
-}
 
 function startBarTimer() {
     timerBar.classList.add('timer-before')
@@ -50,10 +63,15 @@ function stopBarTimer() {
     timerBar.classList.remove('timer-before')
 }
 
+function viewPontos() {
+    pontosFinal.innerHTML = pontos
+}
+
 function timeGame() {
     gameTimer = setTimeout(() => {
-        gameArea.innerHTML = '',
+        gameArea.innerHTML = restart,
         stopBarTimer()
+        viewPontos()
     }, 60000)
 }
 
@@ -67,9 +85,10 @@ function encherVida() {
 
 function verificarLife() {
     if (life === 0) {
-        gameArea.innerHTML = '',
+        gameArea.innerHTML = restart,
         stopGameTimer(),
         stopBarTimer()
+        viewPontos()
     } else {
         console.log('continuar game')
     }
