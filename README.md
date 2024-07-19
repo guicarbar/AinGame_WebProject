@@ -1,3 +1,5 @@
+🟢 🟡 🔴
+
 # AinGame_SitePratica :star:
 
 ## Sobre :page_with_curl:
