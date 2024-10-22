@@ -1,6 +1,6 @@
 🟢 🟡 🔴
 
-# AinGame_SitePratica :star:
+# AinGame_WebProject :star:
 
 ## Sobre :page_with_curl:
 
@@ -17,5 +17,8 @@ AinGame é um jogo criado com HTML5, CSS3 e JavaScript. Ele é bem simples: poss
 1. Criei o jogo com a ideia de treinar minhas habilidades em JavaScript.
 2. Até o momento, o projeto já foi finalizado quanto ao script em JavaScript. No entanto, em HTML e CSS ainda quero fazer algumas melhorias.
 3. Sobre o JavaScript do projeto, tenho ideias de melhorias para ele, mas estão anotadas para fazer o AinGame 2.
+
+
+*Obs:* Projetos com o sufixo *'_WebProjects'* são aplicativos web, projetados para funcionar em navegadores.
 
 :star2: :star2:
